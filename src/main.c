@@ -49,6 +49,8 @@ void	print(t_piece t, int count, int size)
 			x = -1;
 			while (++x < t->width)
 			{
+				x /= 2;
+				x = x >> 1;
 				if ((t->value >> (16 * (y + 1) - 1 - x)) & 1)
 					map[] = t->id;
 			}
@@ -85,9 +87,8 @@ int		main(int ac, char **av)
 	if (!(count = read_tetris(open(av[1], O_RDONLY), tetris))
 		return (ft_exit("error"));
 
-	map = ft_bzero(map, )
 	// solve tetris by map
-	if (!(size = solve_tetris(tetris, count, map))
+	if (!(size = solve_tetris(tetris, count))
 		return (ft_exit("error"));
 	print(tetris, count, size);
 	return (0);

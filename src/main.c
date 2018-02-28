@@ -13,9 +13,31 @@
 #include "fillit.h"
 #include "libft.h"
 
+// creates empty map
+char	*empty_map(int size)
+{
+	char	*tmp;
+	int		x;
+	int		y;
+
+	tmp = ft_strnew((size + 1) * size);
+	y = -1;
+	while (++y < size)
+	{
+		x = -1;
+		while (++x < size)
+		{
+			tmp[y * (size + 1) + x] = '.';
+		}
+		tmp[y * (size + 1) + x] = '\n';
+	}
+	return (tmp);
+}
+
 // error catch
-void ft_catch(char *str) {
+int		ft_exit(char *str) {
 	ft_putendl(str);
+	return (1);
 }
 
 int		main(int ac, char **av)
@@ -28,7 +50,12 @@ int		main(int ac, char **av)
 	av[0] = NULL;
 	// args error
 	if (ac != 2)
-		ft_catch("error");
+		return (ft_exit("usage: ./fillit [input_file]"));
+
+	// empty map test
+	printf("%s", empty_map(5));
+	// ft_bzero(tetris, sizeof(t_etris) * (MAX_TETRI + 1));
+
 	// read error
 	// if ()
 	// 	ft_catch("error");

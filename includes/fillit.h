@@ -6,22 +6,29 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/28 10:39:11 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/02/28 12:12:32 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/02/28 10:42:12 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FILLIT_FT
-# define FILLIT_FT
+#ifndef FILLIT_H
+# define FILLIT_H
+
+# define MAX_TETRI 26
 
 # include <stdint.h>
 # include <stdio.h>
 # include <unistd.h>
 
-typedef struct	s_piece
+typedef struct	s_etris
 {
+	t_etris			*last;
+	u_int64_t		value;
+	unsigned char	x;
+	unsigned char	y;
+	unsigned char	height;
+	unsigned char	width;
+}				t_etris;
 
-}				t_piece;
-
-void	print_piece(uint16_t piece, char c);
+int				read_tetris(const int fd, t_etris *t);
 
 #endif

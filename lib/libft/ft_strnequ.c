@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fillit.h                                           :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mtan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/28 10:39:11 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/02/28 12:12:32 by ikozlov          ###   ########.fr       */
+/*   Created: 2018/02/21 17:41:01 by mtan              #+#    #+#             */
+/*   Updated: 2018/02/21 17:41:09 by mtan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FILLIT_FT
-# define FILLIT_FT
+#include "libft.h"
 
-# include <stdint.h>
-# include <stdio.h>
-# include <unistd.h>
-
-typedef struct	s_piece
+int	ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-
-}				t_piece;
-
-void	print_piece(uint16_t piece, char c);
-
-#endif
+	if (!n)
+		return (1);
+	if (s1 && s2)
+	{
+		while (*s1 && *s1 == *s2 && --n)
+		{
+			s1++;
+			s2++;
+		}
+		if (!(*s2 - *s1))
+			return (1);
+	}
+	return (0);
+}

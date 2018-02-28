@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fillit.h                                           :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mtan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/28 10:39:11 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/02/28 12:12:32 by ikozlov          ###   ########.fr       */
+/*   Created: 2018/02/21 17:41:02 by mtan              #+#    #+#             */
+/*   Updated: 2018/02/21 17:41:10 by mtan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FILLIT_FT
-# define FILLIT_FT
+#include "libft.h"
 
-# include <stdint.h>
-# include <stdio.h>
-# include <unistd.h>
-
-typedef struct	s_piece
+char	*ft_strrchr(const char *s, int c)
 {
+	int		i;
+	int		j;
 
-}				t_piece;
-
-void	print_piece(uint16_t piece, char c);
-
-#endif
+	i = ft_strlen(s);
+	j = 0;
+	while (i >= j)
+		if (s[i - j++] == c)
+			return ((char *)&s[i - (j - 1)]);
+	return (NULL);
+}

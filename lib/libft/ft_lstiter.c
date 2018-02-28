@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fillit.h                                           :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mtan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/28 10:39:11 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/02/28 12:12:32 by ikozlov          ###   ########.fr       */
+/*   Created: 2018/02/21 22:11:05 by mtan              #+#    #+#             */
+/*   Updated: 2018/02/21 22:11:16 by mtan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FILLIT_FT
-# define FILLIT_FT
+#include "libft.h"
 
-# include <stdint.h>
-# include <stdio.h>
-# include <unistd.h>
-
-typedef struct	s_piece
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-
-}				t_piece;
-
-void	print_piece(uint16_t piece, char c);
-
-#endif
+	while (lst)
+	{
+		f(lst);
+		lst = lst->next;
+	}
+}

@@ -16,4 +16,9 @@
 # include <stdint.h>
 # include <unistd.h>
 
+typedef struct	s_piece
+{
+
+}				t_piece
+
 #endif

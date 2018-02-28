@@ -37,12 +37,12 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@make -C $(LIB_DIR)
-	@$(CC) $(OBJ) -L $(LIB_DIR) -o $(NAME)
+	@$(CC) $(OBJ) -L $(LIB_DIR) -l ft -o $(NAME)
 	@echo "[INFO] Fillit created"
 
 $(OBJ_DIR)%.o:$(SRC_DIR)%.c
 	@mkdir -p $(OBJ_DIR)
-	$(CC) $(CFLAGS) $(INC) -o $@ -c $<
+	$(CC) $(CFLAGS) $(INC) -I$(LIB_DIR) -o $@ -c $<
 
 clean:
 	@make -C $(LIB_DIR) clean

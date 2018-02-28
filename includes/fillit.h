@@ -14,11 +14,12 @@
 # define FILLIT_FT
 
 # include <stdint.h>
+# include <stdio.h>
 # include <unistd.h>
 
 typedef struct	s_piece
 {
 
-}				t_piece
+}				t_piece;
 
 #endif

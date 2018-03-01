@@ -43,7 +43,7 @@ t_piece	store_piece(const char *str, char id)
 	char	dim[4];
 	int		x;
 	int		y;
-	printf("%c", id);
+
 	get_dimensions(dim, str);
 	tmp.id = id;
 	tmp.width = dim[1] - dim[0] + 1;
@@ -115,7 +115,7 @@ int		valid_block(const char *str, int size)
 	}
 	if (size == 21 && str[20] != '\n')
 		return (0);
-	if (!valid_piece(str))
+	if (hex != 4 || !valid_piece(str))
 		return (0);
 	return (1);
 }

@@ -66,7 +66,6 @@ int			solve(t_piece *tetris, const int count)
 	int			size;
 
 	size = 2;
-	printf("asdasdAsd");
 	ft_bzero(map, sizeof(uint16_t) * MAX_MAP);
 	while (size * size < count * 4)
 		size++;

@@ -82,6 +82,7 @@ int		main(int ac, char **av)
 	// read all tetris into structure
 	if (!(count = read_pieces(open(av[1], O_RDONLY), tetris)))
 		return (ft_exit("error"));
+	test_struct(tetris, count);
 	// solve tetris by map
 	if (!(size = solve(tetris, count)))
 		return (ft_exit("error"));

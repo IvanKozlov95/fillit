@@ -49,8 +49,8 @@ t_piece	store_piece(const char *str, char id)
 
 	get_dimensions(dim, str);
 	tmp.id = id;
-	tmp.width = dim[1] - dim[0];
-	tmp.height = dim[3] - dim[2];
+	tmp.width = dim[1] - dim[0] + 1;
+	tmp.height = dim[3] - dim[2] + 1;
 	// tmp.last = NULL;
 	y = -1;
 	while (++y < tmp.height)

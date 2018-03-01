@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/28 10:39:11 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/02/28 17:27:50 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/02/28 17:30:17 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 typedef struct	s_piece
 {
-	t_piece			*last;
+	struct s_piece	*last;
 	u_int64_t		value;
 	unsigned char	x;
 	unsigned char	y;

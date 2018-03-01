@@ -30,6 +30,34 @@ static void	place_piece(t_piece piece, uint16_t *map)
 	*(uint64_t *)(map + piece.y) ^= piece.value >> piece.x;
 }
 
+/*
+** Recursive solve fucntion
+*/
+int			solve_map(t_piece *tetris, const int size, uint16_t *map)
+{
+	if (tetris->id == 0)
+		return (1);
+	tetris->y = 0;
+	while (tetris->y <= size - terris->height)
+	{
+		tetris->x = 0;
+		while (terris->x <= size - tetris->width)
+		{
+			if (check_piece(*tetris, map))
+			{
+				place_piece(*tetris, map);
+				if (solve_map(tetris + 2, map))
+					return (1);
+			}
+			tetris->x++;
+		}
+		tetris->y++;
+	}
+	tetris->x = 0;
+	tetris->y = 0;
+	return (0);
+}
+
 int			solve(t_piece *tetris, const int count)
 {
 	uint16_t	map[MAX_MAP];

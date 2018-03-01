@@ -48,7 +48,6 @@ t_piece	store_piece(const char *str, char id)
 	tmp.id = id;
 	tmp.width = dim[1] - dim[0] + 1;
 	tmp.height = dim[3] - dim[2] + 1;
-
 	y = -1;
 	while (++y < tmp.height)
 	{
@@ -78,16 +77,12 @@ int		valid_piece(const char *str)
 	{
 		if (str[i] == '#')
 		{
-			// top
 			if (i > 4 && str[i - 5] == '#')
 				edge++;
-			// bottom
 			if (i < 14 && str[i + 5] == '#')
 				edge++;
-			// left
 			if (i % 5 > 0 && str[i - 1] == '#')
 				edge++;
-			// right
 			if (i % 5 < 3 && str[i + 1] == '#')
 				edge++;
 		}
@@ -99,6 +94,7 @@ int		valid_block(const char *str, int size)
 {
 	int		i;
 	int		hex;
+
 	i = -1;
 	hex = 0;
 	while (++i < 20)
@@ -126,6 +122,7 @@ int		read_pieces(const int fd, t_piece *t)
 	char	id;
 	int		size;
 	int		i;
+
 	id = 'A';
 	i = 0;
 	while ((size = read(fd, buf, 21)) >= 20)

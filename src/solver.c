@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/28 16:57:25 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/02/28 18:04:36 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/02/28 22:06:22 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,5 @@ int			solve(t_piece *tetris, const int count)
 		ft_bzero(map, sizeof(uint16_t) * MAX_MAP);
 		size++;
 	}
-	return (size == MAX_MAP ? 0 : size);
+	return (size == MAX_MAP + 1 ? 0 : size);
 }

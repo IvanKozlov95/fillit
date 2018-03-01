@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/28 13:47:52 by mtan              #+#    #+#             */
-/*   Updated: 2018/02/28 18:06:53 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/02/28 20:41:48 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int		main(int ac, char **av)
 {
 	t_piece		tetris[MAX_PIECES + 1];
 	int			count;
-	// int			size;
+	int			size;
 
 	av[0] = NULL;
 	// args error
@@ -83,8 +83,8 @@ int		main(int ac, char **av)
 	if (!(count = read_pieces(open(av[1], O_RDONLY), tetris)))
 		return (ft_exit("error"));
 	// solve tetris by map
-	// if (!(size = solve_tetris(tetris, count))
-		// return (ft_exit("error"));
-	// print(tetris, count, size);
+	if (!(size = solve(tetris, count)))
+		return (ft_exit("error"));
+	print(tetris, count, size);
 	return (0);
 }

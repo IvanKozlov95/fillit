@@ -13,22 +13,22 @@
 #ifndef FILLIT_H
 # define FILLIT_H
 
-# define MAX_TETRI 26
+# define MAX_PIECES 26
 
 # include <stdint.h>
 # include <stdio.h>
 # include <unistd.h>
 
-typedef struct	s_etris
+typedef struct	s_piece
 {
-	t_etris			*last;
+	t_piece			*last;
 	u_int64_t		value;
 	unsigned char	x;
 	unsigned char	y;
 	unsigned char	height;
 	unsigned char	width;
-}				t_etris;
+}				t_piece;
 
-int				read_tetris(const int fd, t_etris *t);
+int				read_tetris(const int fd, t_piece *t);
 
 #endif

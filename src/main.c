@@ -67,8 +67,7 @@ int		ft_exit(char *str) {
 
 int		main(int ac, char **av)
 {
-	t_etris		tetris[MAX_TETRIS + 1];
-	uint16_t	map[16];
+	t_piece		tetris[MAX_PIECES + 1];
 	int			count;
 	int			size;
 
@@ -81,7 +80,7 @@ int		main(int ac, char **av)
 	printf("%s", empty_map(5));
 
 	// initialization for structure
-	ft_bzero(tetris, sizeof(t_etris) * (MAX_TETRI + 1));
+	ft_bzero(tetris, sizeof(t_piece) * (MAX_TETRI + 1));
 
 	// read all tetris into structure
 	if (!(count = read_tetris(open(av[1], O_RDONLY), tetris))

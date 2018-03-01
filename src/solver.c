@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/28 16:57:25 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/02/28 22:06:22 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/03/01 14:20:15 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ int			solve_map(t_piece *tetris, const int size, uint16_t *map)
 				place_piece(*tetris, map);
 				if (solve_map(tetris + 1, size, map))
 					return (1);
+				place_piece(*tetris, map);
 			}
 			tetris->x++;
 		}

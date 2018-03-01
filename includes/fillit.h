@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/28 10:39:11 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/02/28 17:30:17 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/02/28 18:17:17 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,11 @@ typedef struct	s_piece
 	unsigned char	width;
 }				t_piece;
 
+<<<<<<< HEAD
 int				read_pieces(const int fd, t_piece *t);
+=======
+int				read_tetris(const int fd, t_piece *t);
+int				solve(t_piece *tetris, const int count);
+>>>>>>> 32723f4e8df918f4f3032f5124f9873fa5858a10
 
 #endif

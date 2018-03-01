@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtan <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/28 15:02:48 by mtan              #+#    #+#             */
-/*   Updated: 2018/02/28 15:03:02 by mtan             ###   ########.fr       */
+/*   Updated: 2018/02/28 22:17:06 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ t_piece	store_piece(const char *str, char id)
 
 	get_dimensions(dim, str);
 	tmp.id = id;
-	tmp.width = dim[1] - dim[0];
-	tmp.height = dim[3] - dim[2];
+	tmp.width = dim[1] - dim[0] + 1;
+	tmp.height = dim[3] - dim[2] + 1;
 	// tmp.last = NULL;
 	y = -1;
 	while (++y < tmp.height)

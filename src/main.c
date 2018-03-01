@@ -34,7 +34,7 @@ char	*empty_map(int size)
 	return (tmp);
 }
 
-void	print(t_piece t, int count, int size)
+void	print(t_piece *t, int count, int size)
 {
 	char	*map;
 	int		x;
@@ -49,10 +49,8 @@ void	print(t_piece t, int count, int size)
 			x = -1;
 			while (++x < t->width)
 			{
-				x /= 2;
-				x = x >> 1;
 				if ((t->value >> (16 * (y + 1) - 1 - x)) & 1)
-					map[] = t->id;
+					map[(t->y + y) * (size + 1) + x + t->x] = t->id;
 			}
 		}
 	}
@@ -67,13 +65,9 @@ int		ft_exit(char *str) {
 
 int		main(int ac, char **av)
 {
-<<<<<<< HEAD
 	t_piece		tetris[MAX_PIECES + 1];
-=======
-	t_etris		tetris[MAX_TETRIS + 1];
->>>>>>> 32bff10f0f32fd98354971d1da6cd1b5779a5c42
 	int			count;
-	int			size;
+	// int			size;
 
 	av[0] = NULL;
 	// args error
@@ -84,15 +78,15 @@ int		main(int ac, char **av)
 	printf("%s", empty_map(5));
 
 	// initialization for structure
-	ft_bzero(tetris, sizeof(t_piece) * (MAX_TETRI + 1));
+	ft_bzero(tetris, sizeof(t_piece) * (MAX_PIECES + 1));
 
 	// read all tetris into structure
-	if (!(count = read_tetris(open(av[1], O_RDONLY), tetris))
+	if (!(count = read_tetris(open(av[1], O_RDONLY), tetris)))
 		return (ft_exit("error"));
 
 	// solve tetris by map
-	if (!(size = solve_tetris(tetris, count))
-		return (ft_exit("error"));
-	print(tetris, count, size);
+	// if (!(size = solve_tetris(tetris, count))
+		// return (ft_exit("error"));
+	// print(tetris, count, size);
 	return (0);
 }

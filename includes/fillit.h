@@ -19,10 +19,11 @@
 # include <stdint.h>
 # include <stdio.h>
 # include <unistd.h>
+# include <fcntl.h>
 
 typedef struct	s_piece
 {
-	t_piece			*last;
+	// t_piece			*last;
 	u_int64_t		value;
 	char			id;
 	unsigned char	x;

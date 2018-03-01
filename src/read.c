@@ -45,10 +45,11 @@ t_piece	store_piece(const char *str, char id)
 	t_piece	tmp;
 	char	dim[4];
 
-	get_dimensions(&dim, str);
+	get_dimensions(dim, str);
 	tmp.id = id;
 
 	// tmp.last = NULL;
+	return (tmp);
 }
 
 int		valid_piece(const char *str)
@@ -80,7 +81,7 @@ int		valid_piece(const char *str)
 				edge++;
 		}
 	}
-	return (edge == 6 || edge == 8)
+	return (edge == 6 || edge == 8);
 }
 
 int		valid_block(const char *str)
@@ -110,11 +111,11 @@ int		valid_block(const char *str)
 // main read function
 int		read_tetris(const int fd, t_piece *t)
 {
-	char	*buf[22];
+	char	buf[22];
 	char	id;
 	int		size;
 	int		i;
-	int		j;
+	// int		j;
 
 	id = 'A';
 	i = 0;

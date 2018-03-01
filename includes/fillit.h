@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/28 10:39:11 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/02/28 17:30:17 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/02/28 18:04:13 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <fcntl.h>
+# include "libft.h"
 
 typedef struct	s_piece
 {

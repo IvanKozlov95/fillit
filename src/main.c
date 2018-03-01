@@ -6,12 +6,11 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/28 13:47:52 by mtan              #+#    #+#             */
-/*   Updated: 2018/02/28 17:27:25 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/02/28 18:06:53 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-#include "libft.h"
 
 // creates empty map
 char	*empty_map(int size)

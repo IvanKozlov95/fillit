@@ -6,13 +6,12 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/28 13:47:52 by mtan              #+#    #+#             */
-/*   Updated: 2018/02/28 21:07:47 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/02/28 22:20:16 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-// creates empty map
 char	*empty_map(int size)
 {
 	char	*tmp;
@@ -57,8 +56,9 @@ void	print(t_piece *t, int count, int size)
 	ft_putstr(map);
 	ft_strdel(&map);
 }
-// error catch
-int		ft_exit(char *str) {
+
+int		ft_exit(char *str)
+{
 	ft_putendl(str);
 	return (1);
 }
@@ -70,20 +70,10 @@ int		main(int ac, char **av)
 	int			size;
 
 	av[0] = NULL;
-	// args error
 	if (ac != 2)
 		return (ft_exit("usage: ./fillit [input_file]"));
-
-	// empty map test
-	// printf("%s", empty_map(5));
-
-	// initialization for structure
-	// ft_bzero(tetris, sizeof(t_piece) * (MAX_PIECES + 1));
-
-	// read all tetris into structure
 	if (!(count = read_pieces(open(av[1], O_RDONLY), tetris)))
 		return (ft_exit("error"));
-	// solve tetris by map
 	if (!(size = solve(tetris, count)))
 		return (ft_exit("error"));
 	print(tetris, count, size);

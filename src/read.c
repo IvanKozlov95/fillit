@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/28 15:02:48 by mtan              #+#    #+#             */
-/*   Updated: 2018/02/28 22:17:06 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/02/28 22:23:23 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 void	get_dimensions(char *dim, const char *str)
 {
-	// unsigned char?
 	int i;
 
-	// initialize xMin, xMax, yMin, yMax for i = 0, 1, 2, 3
 	dim[0] = 3;
 	dim[1] = 0;
 	dim[2] = 3;
@@ -37,7 +35,6 @@ void	get_dimensions(char *dim, const char *str)
 				dim[3] = i / 5;
 		}
 	}
-
 }
 
 t_piece	store_piece(const char *str, char id)
@@ -51,7 +48,6 @@ t_piece	store_piece(const char *str, char id)
 	tmp.id = id;
 	tmp.width = dim[1] - dim[0] + 1;
 	tmp.height = dim[3] - dim[2] + 1;
-	// tmp.last = NULL;
 	y = -1;
 	while (++y < tmp.height)
 	{
@@ -65,41 +61,34 @@ t_piece	store_piece(const char *str, char id)
 	return (tmp);
 }
 
+/*
+** an edge connects two adjacent hexes.
+** a valid piece is defined as having a total of 3/4 distinct edges
+*/
+
 int		valid_piece(const char *str)
 {
-	/*
-	an edge connects two adjacent hexes.
-	a valid piece is defined as having a total of 3/4 distinct edges
-	*/
 	int		i;
 	int		edge;
 
 	i = -1;
- 	edge = 0;
+	edge = 0;
 	while (++i < 20)
 	{
 		if (str[i] == '#')
 		{
 			// top
 			if (i > 4 && str[i - 5] == '#')
-			{
 				edge++;
-			}
 			// bottom
 			if (i < 14 && str[i + 5] == '#')
-			{
 				edge++;
-			}
 			// left
 			if (i % 5 > 0 && str[i - 1] == '#')
-			{
 				edge++;
-			}
 			// right
 			if (i % 5 < 3 && str[i + 1] == '#')
-			{
 				edge++;
-			}
 		}
 	}
 	return (edge == 6 || edge == 8);
@@ -107,7 +96,6 @@ int		valid_piece(const char *str)
 
 int		valid_block(const char *str, int size)
 {
-	//check symbols, and nl
 	int		i;
 	int		hex;
 
@@ -131,28 +119,21 @@ int		valid_block(const char *str, int size)
 		return (0);
 	return (1);
 }
-// main read function
+
 int		read_pieces(const int fd, t_piece *t)
 {
 	char	buf[22];
 	char	id;
 	int		size;
 	int		i;
-	// int		j;
 
 	id = 'A';
 	i = 0;
 	while ((size = read(fd, buf, 21)) >= 20)
 	{
-		// check valid file
 		if (!valid_block(buf, size))
 			return (0);
-		// stores each piece with character
 		t[i++] = store_piece(buf, id++);
-		// set linkage for ptr to
-		// j = i - 1;
-		// while ()
 	}
-	// returns count of pieces if valid
 	return (id - 'A');
 }

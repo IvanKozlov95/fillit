@@ -24,6 +24,7 @@ typedef struct	s_piece
 {
 	t_piece			*last;
 	u_int64_t		value;
+	char			id;
 	unsigned char	x;
 	unsigned char	y;
 	unsigned char	height;

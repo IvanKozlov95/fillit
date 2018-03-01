@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/28 16:57:25 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/02/28 17:32:31 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/02/28 18:04:36 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,20 +33,21 @@ static void	place_piece(t_piece piece, uint16_t *map)
 /*
 ** Recursive solve fucntion
 */
+
 int			solve_map(t_piece *tetris, const int size, uint16_t *map)
 {
 	if (tetris->id == 0)
 		return (1);
 	tetris->y = 0;
-	while (tetris->y <= size - terris->height)
+	while (tetris->y <= size - tetris->height)
 	{
 		tetris->x = 0;
-		while (terris->x <= size - tetris->width)
+		while (tetris->x <= size - tetris->width)
 		{
 			if (check_piece(*tetris, map))
 			{
 				place_piece(*tetris, map);
-				if (solve_map(tetris + 2, map))
+				if (solve_map(tetris + 1, size, map))
 					return (1);
 			}
 			tetris->x++;
@@ -64,7 +65,7 @@ int			solve(t_piece *tetris, const int count)
 	int			size;
 
 	size = 2;
-	ft_bzero(map);
+	ft_bzero(map, sizeof(uint16_t) * MAX_MAP);
 	while (size * size < count * 4)
 		size++;
 	while (!solve_map(tetris, size, map) && size <= MAX_MAP)

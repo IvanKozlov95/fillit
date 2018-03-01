@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/28 13:47:52 by mtan              #+#    #+#             */
-/*   Updated: 2018/02/28 20:41:48 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/02/28 21:07:47 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void	print(t_piece *t, int count, int size)
 					map[(t->y + y) * (size + 1) + x + t->x] = t->id;
 			}
 		}
+		t++;
 	}
 	ft_putstr(map);
 	ft_strdel(&map);

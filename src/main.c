@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtan <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/28 13:47:52 by mtan              #+#    #+#             */
-/*   Updated: 2018/02/28 13:47:53 by mtan             ###   ########.fr       */
+/*   Updated: 2018/02/28 17:06:44 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,11 @@ int		ft_exit(char *str) {
 
 int		main(int ac, char **av)
 {
+<<<<<<< HEAD
 	t_piece		tetris[MAX_PIECES + 1];
+=======
+	t_etris		tetris[MAX_TETRIS + 1];
+>>>>>>> 32bff10f0f32fd98354971d1da6cd1b5779a5c42
 	int			count;
 	int			size;
 

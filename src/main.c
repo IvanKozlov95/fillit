@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "fillit.h"
-#include "libft.h"
 
 // creates empty map
 char	*empty_map(int size)
@@ -75,15 +74,14 @@ int		main(int ac, char **av)
 		return (ft_exit("usage: ./fillit [input_file]"));
 
 	// empty map test
-	printf("%s", empty_map(5));
+	// printf("%s", empty_map(5));
 
 	// initialization for structure
-	ft_bzero(tetris, sizeof(t_piece) * (MAX_PIECES + 1));
+	// ft_bzero(tetris, sizeof(t_piece) * (MAX_PIECES + 1));
 
 	// read all tetris into structure
-	if (!(count = read_tetris(open(av[1], O_RDONLY), tetris)))
+	if (!(count = read_pieces(open(av[1], O_RDONLY), tetris)))
 		return (ft_exit("error"));
-
 	// solve tetris by map
 	// if (!(size = solve_tetris(tetris, count))
 		// return (ft_exit("error"));

@@ -44,11 +44,24 @@ t_piece	store_piece(const char *str, char id)
 {
 	t_piece	tmp;
 	char	dim[4];
+	int		x;
+	int		y;
 
 	get_dimensions(dim, str);
 	tmp.id = id;
-
+	tmp.width = dim[1] - dim[0];
+	tmp.height = dim[3] - dim[2];
 	// tmp.last = NULL;
+	y = -1;
+	while (++y < tmp.height)
+	{
+		x = -1;
+		while (++x < tmp.width)
+		{
+			if (str[(dim[0] + x) + (dim[2] + y) * 5] == '#')
+				tmp.value |= (1L << (16 * (y + 1) - 1 - x));
+		}
+	}
 	return (tmp);
 }
 
@@ -69,22 +82,30 @@ int		valid_piece(const char *str)
 		{
 			// top
 			if (i > 4 && str[i - 5] == '#')
+			{
 				edge++;
+			}
 			// bottom
 			if (i < 14 && str[i + 5] == '#')
+			{
 				edge++;
+			}
 			// left
 			if (i % 5 > 0 && str[i - 1] == '#')
+			{
 				edge++;
+			}
 			// right
 			if (i % 5 < 3 && str[i + 1] == '#')
+			{
 				edge++;
+			}
 		}
 	}
 	return (edge == 6 || edge == 8);
 }
 
-int		valid_block(const char *str)
+int		valid_block(const char *str, int size)
 {
 	//check symbols, and nl
 	int		i;
@@ -104,12 +125,14 @@ int		valid_block(const char *str)
 		else if (str[i] != '\n')
 			return (0);
 	}
-	if (!(str[20] == '\n' && valid_piece(str)))
+	if (size == 21 && str[20] != '\n')
+		return (0);
+	if (!valid_piece(str))
 		return (0);
 	return (1);
 }
 // main read function
-int		read_tetris(const int fd, t_piece *t)
+int		read_pieces(const int fd, t_piece *t)
 {
 	char	buf[22];
 	char	id;
@@ -119,10 +142,10 @@ int		read_tetris(const int fd, t_piece *t)
 
 	id = 'A';
 	i = 0;
-	while ((size = read(fd, buf, 21)))
+	while ((size = read(fd, buf, 21)) >= 20)
 	{
 		// check valid file
-		if (size != 21 || !valid_block(buf))
+		if (!valid_block(buf, size))
 			return (0);
 		// stores each piece with character
 		t[i++] = store_piece(buf, id++);

@@ -20,6 +20,7 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <fcntl.h>
+# include "libft.h"
 
 typedef struct	s_piece
 {
@@ -32,6 +33,6 @@ typedef struct	s_piece
 	unsigned char	width;
 }				t_piece;
 
-int				read_tetris(const int fd, t_piece *t);
+int				read_pieces(const int fd, t_piece *t);
 
 #endif

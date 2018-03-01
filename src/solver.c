@@ -49,6 +49,7 @@ int			solve_map(t_piece *tetris, const int size, uint16_t *map)
 				place_piece(*tetris, map);
 				if (solve_map(tetris + 1, size, map))
 					return (1);
+				place_piece(*tetris, map);
 			}
 			tetris->x++;
 		}
@@ -65,6 +66,7 @@ int			solve(t_piece *tetris, const int count)
 	int			size;
 
 	size = 2;
+	printf("asdasdAsd");
 	ft_bzero(map, sizeof(uint16_t) * MAX_MAP);
 	while (size * size < count * 4)
 		size++;

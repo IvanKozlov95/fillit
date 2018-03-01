@@ -43,15 +43,12 @@ t_piece	store_piece(const char *str, char id)
 	char	dim[4];
 	int		x;
 	int		y;
-
+	printf("%c", id);
 	get_dimensions(dim, str);
 	tmp.id = id;
 	tmp.width = dim[1] - dim[0] + 1;
 	tmp.height = dim[3] - dim[2] + 1;
-<<<<<<< HEAD
-	// tmp.last = NULL;
-=======
->>>>>>> 3081c6a6703b819ad19168210f7b3883a9bd5c6b
+
 	y = -1;
 	while (++y < tmp.height)
 	{
@@ -102,7 +99,6 @@ int		valid_block(const char *str, int size)
 {
 	int		i;
 	int		hex;
-
 	i = -1;
 	hex = 0;
 	while (++i < 20)
@@ -130,7 +126,6 @@ int		read_pieces(const int fd, t_piece *t)
 	char	id;
 	int		size;
 	int		i;
-
 	id = 'A';
 	i = 0;
 	while ((size = read(fd, buf, 21)) >= 20)

@@ -74,11 +74,7 @@ int		main(int ac, char **av)
 		return (ft_exit("usage: ./fillit [input_file]"));
 	if (!(count = read_pieces(open(av[1], O_RDONLY), tetris)))
 		return (ft_exit("error"));
-<<<<<<< HEAD
-	test_struct(tetris, count);
-	// solve tetris by map
-=======
->>>>>>> 3081c6a6703b819ad19168210f7b3883a9bd5c6b
+	printf("count: %d\n", count);
 	if (!(size = solve(tetris, count)))
 		return (ft_exit("error"));
 	print(tetris, count, size);

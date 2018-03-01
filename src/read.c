@@ -122,14 +122,17 @@ int		read_pieces(const int fd, t_piece *t)
 	char	id;
 	int		size;
 	int		i;
+	int		check;
 
 	id = 'A';
 	i = 0;
-	while ((size = read(fd, buf, 21)) >= 20)
+	check = 0;
+	while ((size = read(fd, buf, 21)))
 	{
-		if (!valid_block(buf, size))
+		if (size < 20 || !valid_block(buf, size))
 			return (0);
 		t[i++] = store_piece(buf, id++);
+		check = size;
 	}
-	return (id - 'A');
+	return ((check == 20) ? (id - 'A') : 0);
 }

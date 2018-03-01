@@ -74,7 +74,6 @@ int		main(int ac, char **av)
 		return (ft_exit("usage: ./fillit [input_file]"));
 	if (!(count = read_pieces(open(av[1], O_RDONLY), tetris)))
 		return (ft_exit("error"));
-	printf("count: %d\n", count);
 	if (!(size = solve(tetris, count)))
 		return (ft_exit("error"));
 	print(tetris, count, size);

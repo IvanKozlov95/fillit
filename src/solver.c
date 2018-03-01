@@ -30,12 +30,13 @@ static void	place_piece(t_piece piece, uint16_t *map)
 	*(uint64_t *)(map + piece.y) ^= piece.value >> piece.x;
 }
 
+int			solve(t_piece *tetris, const int count)
 {
-	uint16_t	map[MAX_MAP]];
+	uint16_t	map[MAX_MAP];
 	int			size;
 
 	size = 2;
-	ft_bzero(map)
+	ft_bzero(map);
 	while (size * size < count * 4)
 		size++;
 	while (!solve_map(tetris, size, map) && size <= MAX_MAP)

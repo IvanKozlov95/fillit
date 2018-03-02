@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/28 15:02:48 by mtan              #+#    #+#             */
-/*   Updated: 2018/02/28 22:23:23 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/03/02 12:09:15 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ t_piece	store_piece(const char *str, char id)
 	tmp.id = id;
 	tmp.width = dim[1] - dim[0] + 1;
 	tmp.height = dim[3] - dim[2] + 1;
+	tmp.value = 0;
 	y = -1;
 	while (++y < tmp.height)
 	{

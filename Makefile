@@ -3,18 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mtan <marvin@42.fr>                        +#+  +:+       +#+         #
+#    By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/02/28 10:34:43 by mtan              #+#    #+#              #
-#    Updated: 2018/02/28 11:14:10 by mtan             ###   ########.fr        #
+#    Updated: 2018/03/02 12:14:44 by ikozlov          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= fillit
 
 CC		= gcc
-CFLAGS 	= -Wall -Wextra -Werror
-CFLAGS	+= -O
+CFLAGS 	= -Wall -Wextra -Werror -g
 
 SRC_DIR = ./src/
 INC_DIR	= ./includes/

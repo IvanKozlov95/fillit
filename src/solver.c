@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/28 16:57:25 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/03/01 14:20:15 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/03/02 12:02:54 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 static int	check_piece(t_piece piece, uint16_t *map)
 {
-	return (!((*(uint64_t *)(map + piece.y) & (piece.value >> piece.x))));
+	return (!(*(uint64_t *)(map + piece.y) & (piece.value >> piece.x)));
 }
 
 /*

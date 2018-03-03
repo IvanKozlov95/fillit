@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/28 13:47:52 by mtan              #+#    #+#             */
-/*   Updated: 2018/02/28 22:20:16 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/03/02 17:15:14 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,9 +69,9 @@ int		main(int ac, char **av)
 	int			count;
 	int			size;
 
-	av[0] = NULL;
 	if (ac != 2)
 		return (ft_exit("usage: ./fillit [input_file]"));
+	bzero(tetris, MAX_PIECES + 1);
 	if (!(count = read_pieces(open(av[1], O_RDONLY), tetris)))
 		return (ft_exit("error"));
 	if (!(size = solve(tetris, count)))

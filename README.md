@@ -41,7 +41,7 @@ There are some example files for you to try it out.
 ```
 
 ## Authors
-This project was developed jointly by Ivan Kozlov (@ivankozlov95)[me] and Marc G Tan (@mgia)[marc]
+This project was developed jointly by Ivan Kozlov [@ivankozlov95](me) and Marc G Tan [@mgia](marc)
 
 ## License
 This project is licensed under the [GNU General Public License 3][license].

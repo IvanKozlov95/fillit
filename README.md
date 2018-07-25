@@ -31,6 +31,7 @@ Executable `fillit` will be created. Usage:
 There are some example files for you to try it out.
 ```sh
     ./fillit samples/test_8
+
     .AABB..
     AACCB..
     .CC.BDD

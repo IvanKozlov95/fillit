@@ -49,6 +49,6 @@ This project is licensed under the [GNU General Public License 3][license].
 
 [42]: http://42.us.org "42 USA"
 [pdf]: https://github.com/IvanKozlov95/fillit/blob/master/resources/fillit.en.pdf "pdf"
-[license]: https://github.com/IvanKozlov95/fdf/blob/master/LICENSE "license"
+[license]: https://github.com/IvanKozlov95/fillit/blob/master/LICENSE "license"
 [me]: https://github.com/IvanKozlov95 "ivankozlov95"
 [marc]: https://github.com/mgia "crazy rich asian"

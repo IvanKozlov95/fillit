@@ -28,7 +28,7 @@ Executable `fillit` will be created. Usage:
 ```
 
 ## Examples
-There are some example files for you to try it out.
+There are some example files in `sample` folder for you to try it out.
 ```sh
     ./fillit samples/test_8
 
